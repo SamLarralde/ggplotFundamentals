@@ -1,7 +1,12 @@
 ---
 title: "Activity 3: Data visualization: fundamentals of ggplot"
-subtitle: Jan. 12th, 2026, Calvin Munson
-format: markdown_github
+subtitle: Jan. 12th, 2026, Sam Larralde
+
+format:
+
+pdf: default
+
+gfm: default
 editor: visual
 ---
 
@@ -64,7 +69,7 @@ Great! It looks like we have a dataframe with 7 columns of data. This dataset is
 Dataframes can be very large and have many columns; it is sometimes useful to be able to concisely see all of the column names of a dataframe. Just like with the `head()` function earlier, use the `colnames()` function to retrieve and look at a vector of all of the column names of this dataframe.
 
 ```{r q1}
-
+colnames(ci_np)
 ```
 
 ## Graphing basics
@@ -116,7 +121,8 @@ ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
 Replicate the same graph, but this time with a line graph.
 
 ```{r}
-
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_line()
 ```
 
 You can add multiple geoms to one graph by simply adding another line with a `+`. This layers the additional geoms on top of the ones that come before it, so if you want to change the order of the geoms (e.g. putting the line underneath the points, which may be relevant if you add color...), just make sure the "bottom" layer comes first in the code.
@@ -199,7 +205,8 @@ ggplot(ci_np, aes(x = year, y = visitors)) +
 Let's go back to the lineplot. Create the lineplot, but this time, with a dashed linetype and a different colored line.
 
 ```{r}
-
+ggplot(data = ci_np, mapping = aes(x = year, y = visitors)) +
+  geom_line(linetype=2,color = "blue")
 ```
 
 ## Mapping other variables onto aesthetics
@@ -260,8 +267,8 @@ It seems immediately clear that some of the stretches of points belong to separa
 Duplicate the scatterplot from above, but make the color of points vary with the park name.
 
 ```{r include = TRUE}
-
-
+ggplot(data = ca_np, mapping = aes(x = year, y = visitors)) +
+  geom_point(aes(color=park_name))
 ```
 
 Much nicer! And now we can start to see some differences between parks, for instance, Yosemite looks to be by far the most visited National Park in California.
