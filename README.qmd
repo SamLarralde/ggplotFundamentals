@@ -311,6 +311,14 @@ Use what you have learned to make a graph to answer that question. Try and add a
 
 After you have made a graph, write 1) a sentence or two about what you have learned from the graph and 2) a follow-up research question (is there additional data that you might want to acquire for your follow-up question?).
 
+```{r}
+
+```
+
 ### Q8 Export the graph
 
 Use your expert googling skills to figure out how to export a graph from RStudio! (hint: `ggsave()`). After you've done that, paste your research question, graph, what you learned, and your follow-up question into this slide deck: <https://docs.google.com/presentation/d/1wAGmbArAW2YKmufrBbzCQ3BcDdwDknzgoRHYEmFXJko/edit?usp=sharing>
+
+```{r}
+ggsave()
+```
